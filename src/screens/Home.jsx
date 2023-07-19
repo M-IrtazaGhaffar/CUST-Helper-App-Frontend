@@ -17,7 +17,7 @@ function Home() {
       >
         <Image src={Logo} w="200px" />
         <Heading px={10} textAlign="center">
-          Please choose anyone of the given below
+          Please choose anyone of the given below lol
         </Heading>
         <Flex
           alignItems="center"
