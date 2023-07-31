@@ -11,14 +11,10 @@ import Login from "./screens/Login";
 import Dashboard from "./screens/Dasboard";
 import { useState } from "react";
 import AdminLogin from "./states/Context";
-import { inject } from "@vercel/analytics";
-import { useEffect } from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   const [LoginAttempt, setLoginAttempt] = useState(0);
-  useEffect(() => {
-    inject()
-  }, [])
   return (
     <ChakraProvider>
       <BrowserRouter>
@@ -70,6 +66,7 @@ function App() {
           2023
         </Text>
       </Text>
+      <Analytics />
     </ChakraProvider>
   );
 }
