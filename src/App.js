@@ -11,9 +11,14 @@ import Login from "./screens/Login";
 import Dashboard from "./screens/Dasboard";
 import { useState } from "react";
 import AdminLogin from "./states/Context";
+import { inject } from "@vercel/analytics";
+import { useEffect } from "react";
 
 function App() {
   const [LoginAttempt, setLoginAttempt] = useState(0);
+  useEffect(() => {
+    inject()
+  }, [])
   return (
     <ChakraProvider>
       <BrowserRouter>
