@@ -85,7 +85,7 @@ function CGPA() {
                 <NumberInput name="s_gpa" min={1} max={14}>
                   <NumberInputField
                     onChange={(e) => setValue(e.target.value)}
-                    placeholder="Min(1) - Max(14)"
+                    placeholder="Semesters (1-14) ~ GPA (0-4)"
                     required
                     min
                   />
