@@ -1,5 +1,5 @@
 import { Heading, Box, Image, Spinner } from '@chakra-ui/react'
-import React from 'react'
+import React, { useEffect } from 'react'
 import Logo from '../assets/cust-logo.png'
 import { useNavigate } from 'react-router-dom'
 
@@ -7,7 +7,7 @@ function Splash() {
 
     const navigate = useNavigate();
 
-    React.useEffect(() => {
+    useEffect(() => {
         setTimeout(() => {
             navigate('/home')
         }, 3000)

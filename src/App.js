@@ -2,13 +2,9 @@ import * as React from "react";
 import { ChakraProvider, Text } from "@chakra-ui/react";
 import Home from "./screens/Home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Calculation from "./screens/Calculation";
 import Splash from "./screens/Splash";
-import Reviews from "./screens/Reviews";
 import CGPA from "./screens/CGPA";
-import Form from "./screens/Form";
-import Login from "./screens/Login";
-import Dashboard from "./screens/Dasboard";
+import Gemini from "./screens/Gemini";
 import { useState } from "react";
 import AdminLogin from "./states/Context";
 import { Analytics } from "@vercel/analytics/react";
@@ -23,13 +19,7 @@ function App() {
             <Route exact path="/" element={<Splash />} />
             <Route exact path="/home" element={<Home />} />
             <Route exact path="/cgpa" element={<CGPA />} />
-            <Route exact path="/reviews" element={<Reviews />} />
-            <Route exact path="/gpa" element={<Calculation />} />
-            <Route exact path="/form" element={<Form />} />
-            <Route exact path="/admin/">
-              <Route exact path="login" element={<Login />} />
-              <Route exact path="dashboard" element={<Dashboard />} />
-            </Route>
+            <Route exact path="/gemini" element={<Gemini />} />
           </Routes>
         </AdminLogin.Provider>
       </BrowserRouter>

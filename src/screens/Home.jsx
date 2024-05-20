@@ -31,7 +31,10 @@ function Home() {
           <Link to="/cgpa">
             <Button>CGPA Calculator</Button>
           </Link>
-          <Link to="/reviews">
+          <Link to="/gemini">
+            <Button>Gemini Chat</Button>
+          </Link>
+          {/* <Link to="/reviews">
             <Button>Student Reviews about Teachers</Button>
           </Link>
           <Link to="/form">
@@ -39,7 +42,7 @@ function Home() {
           </Link>
           <Link to="/admin/login">
             <Button>Admin Login</Button>
-          </Link>
+          </Link> */}
         </Flex>
       </Flex>
     </div>
