@@ -7,12 +7,14 @@ function Header() {
     <Box
       display="flex"
       alignItems="center"
+      justifyContent='center'
       gap={3}
-      flexDirection="column"
+      flexDirection="row"
       py={3}
     >
-      <Image src={Logo} w={150} />
-      <Text fontSize="xs">CUST Islamabad</Text>
+      <Image src={Logo} w={50} />
+      {/* <Text fontSize="xs">CUST</Text>
+      <Image src={Logo} w={50} /> */}
     </Box>
   );
 }
