@@ -12,6 +12,7 @@ function Gemini() {
     const ai = async (e) => {
         e.preventDefault()
 
+        setQuery('')
         setDisable(true)
 
         setConvo([...convo, {
