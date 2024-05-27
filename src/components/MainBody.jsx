@@ -1,6 +1,5 @@
 import {
   Box,
-  Heading,
   Text,
   Input,
   Card,
@@ -38,7 +37,7 @@ function MainBody(props) {
 
   useEffect(() => {
     setgradeData(props.gradeData);
-  });
+  }, [props.gradeData]);
 
   const handleInput = (e) => {
     let { name, value } = e.target;

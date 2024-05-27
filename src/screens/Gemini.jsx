@@ -4,12 +4,21 @@ import { GoogleGenerativeAI } from "@google/generative-ai"
 import Header from "../components/Header"
 
 function Gemini() {
-    const [key, setKey] = useState("AIzaSyDRRr9eVQYxt4BGVGTXf9EswJ9onfECWCQ")
+    const [key] = useState("AIzaSyDRRr9eVQYxt4BGVGTXf9EswJ9onfECWCQ")
     const [query, setQuery] = useState("")
     const [convo, setConvo] = useState([])
+    const [disable, setDisable] = useState(false)
 
     const ai = async (e) => {
         e.preventDefault()
+
+        setDisable(true)
+
+        setConvo([...convo, {
+            q: query,
+            a: `Please Wait...`
+        }])
+
         const genAI = new GoogleGenerativeAI(key);
 
         const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-latest" });
@@ -22,6 +31,7 @@ function Gemini() {
             q: query,
             a: result.response.text()
         }])
+        setDisable(false)
     }
 
     return (
@@ -32,13 +42,13 @@ function Gemini() {
             minHeight='100vh'
         >
             <Header />
-            <Heading textAlign='center' padding='25px'>
+            <Heading textAlign='center' paddingX='25px'>
                 Chat with Gemini here!
             </Heading>
             {
                 convo.map((i, ind) => {
                     return (
-                        <Flex gap='5px' flexDirection='column' justifyContent='flex-start' padding='15px' >
+                            <Flex gap='5px' flexDirection='column' justifyContent='flex-start' padding='15px' >
                             <Box maxWidth='80%' position='relative' right='0' >
                                 <Box fontSize='xs' >Query</Box>
                                 <Box width='fit-content' bgColor='white' borderTopRadius='lg' borderLeftRadius='lg' padding='10px' >{i.q}</Box>
@@ -64,7 +74,7 @@ function Gemini() {
                 padding: '10px'
             }}>
                 <Input bgColor='white' placeholder="Ask Something!" value={query} onChange={(e) => setQuery(e.target.value)}  />
-                <Button onClick={ai}>Ask</Button>
+                <Button isDisabled={disable} onClick={ai}>Ask</Button>
             </form>
         </Box>
     )

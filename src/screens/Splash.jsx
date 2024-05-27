@@ -11,7 +11,7 @@ function Splash() {
         setTimeout(() => {
             navigate('/home')
         }, 3000)
-    }, [])
+    })
 
     return (
         <Box

@@ -8,6 +8,7 @@ import Gemini from "./screens/Gemini";
 import { useState } from "react";
 import AdminLogin from "./states/Context";
 import { Analytics } from "@vercel/analytics/react";
+import Calculation from "./screens/Calculation";
 
 function App() {
   const [LoginAttempt, setLoginAttempt] = useState(0);
@@ -19,6 +20,7 @@ function App() {
             <Route exact path="/" element={<Splash />} />
             <Route exact path="/home" element={<Home />} />
             <Route exact path="/cgpa" element={<CGPA />} />
+            <Route exact path="/gpa" element={<Calculation />} />
             <Route exact path="/gemini" element={<Gemini />} />
           </Routes>
         </AdminLogin.Provider>
@@ -36,7 +38,7 @@ function App() {
       >
         <span>
           Made by{" "}
-          <a href="https://www.ittidevelops.com" target="_blank">
+          <a href="https://www.ittidevelops.com" rel="noreferrer" target="_blank">
             ITTI Develops
           </a>
         </span>
